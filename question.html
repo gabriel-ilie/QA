@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    	<title>Question</title>
+    	<title>Q&A</title>
     	<style>
+    		body {background-color:#bef5fa;}
 			#submit_btn {
 				position: relative;
-				left: 75%;
+				left: 70%;
 			}
 			img {
-        		width: 70%;
+        		width: 90%;
         		position: absolute;
-        		left: 15%;
-        		top: 15%;
+        		left: 5%;
         		z-index: -1;
+        		padding-top: 6%;
+        		padding-bottom: 6%;
       		}
       		form {font-size: 1.8em; }
       		input {font-size: 1em; }
       		.form-center {
   				display:flex;
   				justify-content: center;
-  				padding-top: 10%;
+				padding-top: 12%;
+			}
+			.contact_form {
+				position: absolute;
+				background-color: transparent;
 			}
 		</style>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.16.0/js/md5.min.js"></script>
@@ -28,7 +34,7 @@
 			let question = document.getElementById('question').value;
 			let answer = document.getElementById('answer').value;
 			let value = (question + answer).replace(' ', '').replace(' ', '').replace(' ', '').replace(' ', '').replace('?', '').replace('!', '').toUpperCase();
-			if (md5(value) == 'a59a483c266acccd90c99fb8e680fec5') alert('Are you sure?\nIf yes please open the package');
+			if (md5(value) == 'a59a483c266acccd90c99fb8e680fec5') alert('Are you sure?\nThen open the package');
 			else alert(`That's not it \n Try again!`);
 		
 			}
@@ -36,17 +42,16 @@
 	</head>
 	<body>
 		<div class="box">
-		
 			<img src="https://raw.githubusercontent.com/gabriel-ilie/question/main/background.jpg"/>
-		</div>
-		<div class="form-center">
-			<form id="contact_form" action="/action_page.php" style="background:#617193; padding-left: 15px; padding-top: 15px; padding-right: 15px; padding-bottom: 15px;">
-				<label for="question">Q:</label>
-				<input type="text" id="question" name="question">?<br><br>
-				<label for="lname">A:</label>
-				<input type="text" id="answer" name="answer" value="I ">!<br><br>
-				<input id="submit_btn" type="button" value="Submit" onclick="test();">
-			</form>
+			<div class="form-center">
+				<form id="contact_form" action="/action_page.php">
+					<label for="question">Q:</label>
+					<input type="text" id="question" name="question" size="16">?<br><br>
+					<label for="lname">A:</label>
+					<input type="text" id="answer" name="answer" value="I " size="16">!<br><br>
+					<input id="submit_btn" type="button" value="Submit" onclick="test();">
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
